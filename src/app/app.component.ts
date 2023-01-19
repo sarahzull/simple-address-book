@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'simple-address-book-dcm';
+  name = "";
+  phone = "";
+  email = "";
+
+  title = 'Simple Address Book';
 }
