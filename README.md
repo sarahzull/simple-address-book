@@ -1,5 +1,7 @@
 # Simple Address Book using Angular
 
+[Demo](https://sarahzull-simple-address-book.netlify.app/)
+
 ## Run Locally
 
 Clone the project
