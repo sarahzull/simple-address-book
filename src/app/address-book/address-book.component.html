@@ -1,1 +1,75 @@
-<p>address-book works!</p>
+<div class="container-fluid bg-secondary p-3 text-center">
+  <span class="h5 text-white">Simple Address Book</span>
+</div>
+
+
+<div class="container m-5 p-5">
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="card">
+        <div class="card-body">
+          <form [formGroup]="addressForm">
+            <div class="mb-3 form-group">
+              <label for="nameInput" class="form-label">Name</label>
+              <input class="form-control" formControlName="Name">
+            </div>
+            <div class="mb-3 form-group">
+              <label for="phoneInput" class="form-label">Phone Number</label>
+              <input class="form-control" formControlName="Phone">
+            </div>
+            <div class="mb-3 form-group">
+              <label for="emailInput" class="form-label">Email Address</label>
+              <input class="form-control" formControlName="Email">
+            </div>
+
+            <div class="m-4 text-center">
+              <button type="button" class="btn btn-dark" (click)="clear()">Clear</button>
+              <button type="button" class="btn btn-primary" style="margin-left: 10px ;" (click)="update()">
+                Update
+              </button>
+              <button type="button" class="btn btn-success" style="margin-left: 10px ;" (click)="submit()">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-8">
+      <div class="card">
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead class="bg-light">
+                <tr class="text-center">
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Phone</th>
+                  <th scope="col">Email</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let address of addressList; let i = index" class="text-center">
+                  <td>{{i+1}}</td>
+                  <td>{{address.Name}}</td>
+                  <td>{{address.Phone}}</td>
+                  <td>{{address.Email}}</td>
+                  <td>
+                    <button type="button" class="btn btn-sm m-1" (click)="edit(i)">
+                      <i class="fa-solid fa-pen-to-square"></i>
+                    </button>
+                    <button type="button" class="btn btn-sm m-1" (click)="delete(i)">
+                      <i class="fa-solid fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
